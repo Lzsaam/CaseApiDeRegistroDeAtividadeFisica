@@ -1,0 +1,91 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-09-27T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.1.0",
+  "resources": [
+    {
+      "_id": "wrk_atividade_fisica",
+      "_type": "workspace",
+      "name": "API Atividades Físicas",
+      "description": "Coleção Insomnia para testar a API de atividades físicas"
+    },
+    {
+      "_id": "env_workspace",
+      "_type": "environment",
+      "parentId": "wrk_atividade_fisica",
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "http://localhost:8080"
+      }
+    },
+    {
+      "_id": "req_post_atividades",
+      "_type": "request",
+      "parentId": "wrk_atividade_fisica",
+      "name": "Registrar atividade",
+      "method": "POST",
+      "url": "{{ baseUrl }}/atividades",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"funcional\": \"123456\",\n  \"dataHora\": \"2025-09-24T07:30:00\",\n  \"codigoAtividade\": \"RUN\",\n  \"descricaoAtividade\": \"Corrida de 5km\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_get_atividades",
+      "_type": "request",
+      "parentId": "wrk_atividade_fisica",
+      "name": "Listar todas atividades",
+      "method": "GET",
+      "url": "{{ baseUrl }}/atividades"
+    },
+    {
+      "_id": "req_get_atividade_id",
+      "_type": "request",
+      "parentId": "wrk_atividade_fisica",
+      "name": "Buscar atividade por ID",
+      "method": "GET",
+      "url": "{{ baseUrl }}/atividades/1"
+    },
+    {
+      "_id": "req_get_atividades_funcional",
+      "_type": "request",
+      "parentId": "wrk_atividade_fisica",
+      "name": "Listar por funcional",
+      "method": "GET",
+      "url": "{{ baseUrl }}/atividades/funcional/123456"
+    },
+    {
+      "_id": "req_put_atividade",
+      "_type": "request",
+      "parentId": "wrk_atividade_fisica",
+      "name": "Atualizar atividade",
+      "method": "PUT",
+      "url": "{{ baseUrl }}/atividades/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"funcional\": \"654321\",\n  \"dataHora\": \"2025-09-24T08:00:00\",\n  \"codigoAtividade\": \"WALK\",\n  \"descricaoAtividade\": \"Caminhada leve\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req_delete_atividade",
+      "_type": "request",
+      "parentId": "wrk_atividade_fisica",
+      "name": "Remover atividade",
+      "method": "DELETE",
+      "url": "{{ baseUrl }}/atividades/1"
+    }
+  ]
+}
